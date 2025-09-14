@@ -1,0 +1,204 @@
+{
+  "vessels": [
+    {
+      "id": "V001",
+      "name": "Pioneering Spirit"
+    }
+  ],
+  "weatherForecast": {
+    "location": {
+      "lat": 61.5,
+      "lon": 4.8
+    },
+    "forecast": [
+      {
+        "timestamp": "2025-09-01T06:00:00Z",
+        "wave_period": 8.2,
+        "wave_height": 1.8
+      },
+      {
+        "timestamp": "2025-09-01T12:00:00Z",
+        "wave_period": 9.1,
+        "wave_height": 1.9
+      },
+      {
+        "timestamp": "2025-09-01T18:00:00Z",
+        "wave_period": 10.3,
+        "wave_height": 1.8
+      },
+      {
+        "timestamp": "2025-09-02T00:00:00Z",
+        "wave_period": 11.7,
+        "wave_height": 1.6
+      },
+      {
+        "timestamp": "2025-09-02T06:00:00Z",
+        "wave_period": 11.7,
+        "wave_height": 1.7
+      },
+      {
+        "timestamp": "2025-09-02T12:00:00Z",
+        "wave_period": 12.5,
+        "wave_height": 1.5
+      },
+      {
+        "timestamp": "2025-09-02T18:00:00Z",
+        "wave_period": 13.8,
+        "wave_height": 1.8
+      },
+      {
+        "timestamp": "2025-09-03T00:00:00Z",
+        "wave_period": 12.8,
+        "wave_height": 1.9
+      },
+      {
+        "timestamp": "2025-09-03T06:00:00Z",
+        "wave_period": 15.2,
+        "wave_height": 2.1
+      },
+      {
+        "timestamp": "2025-09-03T12:00:00Z",
+        "wave_period": 14.9,
+        "wave_height": 2.3
+      },
+      {
+        "timestamp": "2025-09-03T18:00:00Z",
+        "wave_period": 13.4,
+        "wave_height": 3.5
+      },
+      {
+        "timestamp": "2025-09-04T00:00:00Z",
+        "wave_period": 13.8,
+        "wave_height": 3.2
+      },
+      {
+        "timestamp": "2025-09-04T06:00:00Z",
+        "wave_period": 11.8,
+        "wave_height": 2.9
+      },
+      {
+        "timestamp": "2025-09-04T12:00:00Z",
+        "wave_period": 10.2,
+        "wave_height": 2.0
+      },
+      {
+        "timestamp": "2025-09-04T18:00:00Z",
+        "wave_period": 9.6,
+        "wave_height": 1.9
+      },
+      {
+        "timestamp": "2025-09-05T00:00:00Z",
+        "wave_period": 9.0,
+        "wave_height": 1.3
+      }
+    ],
+    "plannedTasks": {
+      "metadata": {
+        "title": "Offshore Project Schedule",
+        "generated": "2024-08-31",
+        "version": "1.0"
+      },
+      "vessels": [{ "name": "Pioneering Spirit" }],
+      "projects": [
+        {
+          "id": "1",
+          "name": "Riser Replacement",
+          "description": "Riser Replacement at offshore oil platform",
+          "location": {
+            "name": "North Sea",
+            "coordinates": { "lat": 61.5, "lng": 4.8 },
+            "waterDepth": 400,
+            "region": "North Sea"
+          },
+          "startDate": "2024-08-24",
+          "endDate": "2024-09-15",
+          "projectManager": "Emma Thompson",
+          "marineCoordinator": "Lars Andersen",
+          "version": "v1.3",
+          "tasks": [
+            {
+              "id": "wf-strm-001",
+              "name": "STORM RIDING",
+              "level": 1,
+              "parentId": "wf-001",
+              "startDate": "2024-08-24",
+              "endDate": "2024-08-26",
+              "duration": 2,
+              "weatherLimits": { "Hs": 6.0, "Tp": [5, 15] }
+            },
+            {
+              "id": "wf-prep-001",
+              "name": "PREP WORK",
+              "level": 1,
+              "parentId": "wf-001",
+              "startDate": "2024-08-27",
+              "endDate": "2024-08-29",
+              "duration": 2,
+              "weatherLimits": { "Hs": 3.0, "Tp": [5, 15] }
+            },
+            {
+              "id": "wf-inst-001",
+              "name": "INSTALLATION TASK 1",
+              "level": 1,
+              "parentId": "wf-001",
+              "startDate": "2024-08-30",
+              "endDate": "2024-09-02",
+              "duration": 4,
+              "weatherLimits": { "Hs": 2.0, "Tp": [5, 15] }
+            },
+            {
+              "id": "wf-inst-002",
+              "name": "INSTALLATION TASK 2",
+              "level": 1,
+              "parentId": "wf-001",
+              "startDate": "2024-09-03",
+              "endDate": "2024-09-07",
+              "duration": 4,
+              "weatherLimits": { "Hs": 2.0, "Tp": [5, 15] }
+            },
+            {
+              "id": "wf-strm-001",
+              "name": "STORM RIDING",
+              "level": 1,
+              "parentId": "wf-001",
+              "startDate": "2024-09-08",
+              "endDate": "2024-09-09",
+              "duration": 1,
+              "weatherLimits": { "Hs": 6.0, "Tp": [5, 15] }
+            },
+            {
+              "id": "wf-inst-003",
+              "name": "INSTALLATION TASK 3",
+              "level": 1,
+              "parentId": "wf-001",
+              "startDate": "2024-09-10",
+              "endDate": "2024-09-12",
+              "duration": 2,
+              "weatherLimits": { "Hs": 1.5, "Tp": [5, 15] }
+            },
+            {
+              "id": "wf-inst-004",
+              "name": "INSTALLATION TASK 4",
+              "level": 1,
+              "parentId": "wf-001",
+              "startDate": "2024-09-13",
+              "endDate": "2024-09-14",
+              "duration": 1,
+              "weatherLimits": { "Hs": 3.5, "Tp": [5, 15] }
+            },
+            {
+              "id": "wf-inst-005",
+              "name": "INSTALLATION TASK 5",
+              "level": 1,
+              "parentId": "wf-001",
+              "startDate": "2024-09-14",
+              "endDate": "2024-09-15",
+              "duration": 1,
+              "weatherLimits": { "Hs": 2.5, "Tp": [5, 15] }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
