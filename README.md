@@ -1,69 +1,79 @@
-# React + TypeScript + Vite
+# Entail Frontend Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript implementation of the Entail Senior Frontend Engineer case study.
 
-Currently, two official plugins are available:
+The app displays:
+- A **timeline** of planned offshore tasks
+- A **Selected Task** panel with task details
+- **Weather forecast** chart (wave height & period)
+- **Go/No-Go** indicator based on weather limits
+- Static **3D placeholders** for vessel/platform/riser views
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Built with strict typing (no `any`, no `null`), accessible components, error handling, and automated tests.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
+- [Node.js](https://nodejs.org/) v18 or newer
+- [pnpm](https://pnpm.io/) (recommended)
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+### Install dependencies
+```bash
+pnpm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Run the dev server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+Start just the frontend:
+```bash
+pnpm run dev
 ```
+
+Start only the mock API (json-server):
+```bash
+pnpm run dev:data
+```
+
+Start both frontend and API together:
+```bash
+pnpm run dev:all
+```
+
+- Frontend runs at: [http://localhost:5173](http://localhost:5173)  
+- API runs at: [http://localhost:4000](http://localhost:4000)
+
+### Lint & formatting
+```bash
+pnpm run lint        # check lint errors
+pnpm run lint:fix    # fix lint errors
+pnpm run format      # format with Prettier
+pnpm run format:check
+```
+
+### Type checking
+```bash
+pnpm run check
+```
+
+### Run tests
+```bash
+pnpm run test          # single run
+pnpm run test:watch    # watch mode
+pnpm run test:coverage # with coverage
+```
+
+---
+## 🧪 Testing
+
+- Unit tests: normalization, selectors, feasibility logic
+- Integration test: App loads, fetch is mocked, Go/No-Go indicator appears
+- Run with:
+  ```bash
+  pnpm run test
+  ```
+
+---
+...
+---
