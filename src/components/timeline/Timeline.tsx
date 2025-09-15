@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react';
 import type { KeyboardEvent } from 'react';
-import { usePlanStore } from '../store/usePlanStore';
+import { usePlanStore } from '../../store/usePlanStore.ts';
 import './Timeline.css';
 
 export default function Timeline() {
