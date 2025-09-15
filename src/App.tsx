@@ -7,6 +7,7 @@ import { forecastInWindow, getSelectedTask, hasAnyOverlap } from './logic/select
 import Timeline from './components/timeline/Timeline.tsx';
 import SelectedTaskPanel from './components/selectedTaskPanel/SelectedTaskPanel.tsx';
 import WaveChart from './components/waveChart/WaveChart.tsx';
+import GoNoGoIndicator from './components/goNoGoIndicator/GoNoGoIndicator.tsx';
 import './index.css';
 
 export default function App() {
@@ -26,18 +27,9 @@ export default function App() {
         setSelectedInUrl(selectedId);
     }, [selectedId]);
 
-    const selectedTask = useMemo(
-        () => getSelectedTask(tasks, selectedId),
-        [tasks, selectedId]
-    );
-    const overlap = useMemo(
-        () => hasAnyOverlap(weather, selectedTask),
-        [weather, selectedTask]
-    );
-    const windowed = useMemo(
-        () => forecastInWindow(weather, selectedTask),
-        [weather, selectedTask]
-    );
+    const selectedTask = useMemo(() => getSelectedTask(tasks, selectedId), [tasks, selectedId]);
+    const overlap = useMemo(() => hasAnyOverlap(weather, selectedTask), [weather, selectedTask]);
+    const windowed = useMemo(() => forecastInWindow(weather, selectedTask), [weather, selectedTask]);
 
     return (
         <div className="app__main">
@@ -49,13 +41,13 @@ export default function App() {
             <section className="app__card">
                 <h2 className="app__heading">Selected Task</h2>
                 <SelectedTaskPanel />
+                <div className="app__indicator-container">
+                    <GoNoGoIndicator />
+                </div>
                 <div className="app__chart-container">
                     {!overlap && selectedTask !== undefined ? (
-                        <div className="error__card">
-                            No forecast overlaps the selected task’s window.
-                        </div>
-                    ) : undefined}
-                    <WaveChart data={windowed} />
+                        <div className="error__card">No forecast overlaps the selected task’s window.</div>
+                    ) : (<WaveChart data={windowed} />)}
                 </div>
             </section>
         </div>

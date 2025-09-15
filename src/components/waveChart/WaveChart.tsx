@@ -31,10 +31,6 @@ export default function WaveChart({ data }: Props) {
         [data]
     );
 
-    if (chartData.length === 0) {
-        return <em>No forecast in selected window.</em>;
-    }
-
     const legendFormatter = (value: string): string =>
         value === 'wave_height'
             ? DISPLAY.wave_height

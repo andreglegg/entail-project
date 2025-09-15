@@ -39,3 +39,17 @@ export type WeatherForecastPayload = {
     }>;
   };
 };
+
+export type FeasibilityViolationKind = 'Hs' | 'TpLow' | 'TpHigh';
+
+export type FeasibilityViolation = {
+    at: string;
+    kind: FeasibilityViolationKind;
+    value: number;
+    limit: number;
+};
+
+export type Feasibility = {
+    isGo: boolean;
+    violations: FeasibilityViolation[];
+};

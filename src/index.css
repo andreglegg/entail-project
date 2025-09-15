@@ -41,7 +41,7 @@ body {
     margin-top: 0;
 }
 
-.app__chart-container {
+.app__chart-container, .app__indicator-container {
     margin-top: 12px;
 }
 
@@ -57,4 +57,10 @@ body {
 .focus__visible:focus-visible {
     outline: 2px solid #111;
     outline-offset: 2px;
+}
+
+.status__row {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
 }
