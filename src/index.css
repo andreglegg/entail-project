@@ -21,8 +21,8 @@ body {
 }
 
 .app__main {
-  max-width: 1100px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   padding: 16px;
   display: grid;
   gap: 16px;
@@ -31,7 +31,8 @@ body {
 
 @media (min-width: 900px) {
   .app__main {
-    grid-template-columns: 1fr 1fr;
+    /* left = timeline (narrow), right = selected task (wide) */
+    grid-template-columns: minmax(260px, 420px) 1fr;
   }
 }
 
@@ -49,6 +50,10 @@ body {
 .app__chart-container,
 .app__indicator-container {
   margin-top: 12px;
+}
+
+.app__3d-container {
+  margin-top: 16px;
 }
 
 .error__card {

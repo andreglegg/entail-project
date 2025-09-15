@@ -5,14 +5,19 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:data": "json-server --watch dev-server/db.json --port 4000",
+    "dev:all": "pnpm run dev:data & pnpm run dev",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
     "preview": "vite preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "dev:data": "json-server --watch dev-server/db.json --port 4000",
+    "check": "tsc --noEmit && pnpm run lint && pnpm run format:check",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "prepare": "husky install"
   },
   "dependencies": {
     "date-fns": "^4.1.0",
@@ -37,6 +42,7 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "eslint-plugin-unicorn": "^61.0.2",
     "globals": "^16.3.0",
+    "husky": "^9.0.11",
     "jsdom": "^27.0.0",
     "json-server": "1.0.0-beta.3",
     "msw": "^2.11.2",
