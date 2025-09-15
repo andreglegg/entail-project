@@ -5,8 +5,7 @@ export function getSelectedTask(
   tasks: TaskInstance[],
   id: string | undefined
 ): TaskInstance | undefined {
-  if (id === undefined || id === '') return undefined; // no implicit truthiness
-  return tasks.find((t) => t.instanceId === id);
+  return id !== undefined ? tasks.find((t) => t.instanceId === id) : undefined;
 }
 
 /**
@@ -26,10 +25,10 @@ export function forecastInWindow(
  * check for overlap with weather and task date (mock data had no overlapping dates)
  */
 export function hasAnyOverlap(points: WeatherPoint[], task: TaskInstance | undefined): boolean {
-    if ((task == undefined) || points.length === 0) return false;
-    const start = parseISO(task.startAt).getTime();
-    const end = parseISO(task.endAt).getTime();
-    const first = new Date(points[0]!.timestamp).getTime();
-    const last = new Date(points[points.length - 1]!.timestamp).getTime();
-    return !(end < first || start > last);
+  if (task == undefined || points.length === 0) return false;
+  const start = parseISO(task.startAt).getTime();
+  const end = parseISO(task.endAt).getTime();
+  const first = new Date(points[0]!.timestamp).getTime();
+  const last = new Date(points[points.length - 1]!.timestamp).getTime();
+  return !(end < first || start > last);
 }

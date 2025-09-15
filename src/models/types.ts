@@ -43,13 +43,20 @@ export type WeatherForecastPayload = {
 export type FeasibilityViolationKind = 'Hs' | 'TpLow' | 'TpHigh';
 
 export type FeasibilityViolation = {
-    at: string;
-    kind: FeasibilityViolationKind;
-    value: number;
-    limit: number;
+  at: string;
+  kind: FeasibilityViolationKind;
+  value: number;
+  limit: number;
 };
 
 export type Feasibility = {
-    isGo: boolean;
-    violations: FeasibilityViolation[];
+  isGo: boolean;
+  violations: FeasibilityViolation[];
+};
+
+export type AppErrorKind = 'Network' | 'InvalidData' | 'Unknown';
+
+export type AppError = {
+  kind: AppErrorKind;
+  message: string;
 };

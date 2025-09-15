@@ -1,29 +1,29 @@
 .go-no-go {
-    display: inline-flex;
-    gap: 8px;
-    align-items: center;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
 }
 
 .go-no-go__dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius: 999px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
 }
 
 .go-no-go__dot--go {
-    background: #22c55e;
+  background: #22c55e;
 }
 
 .go-no-go__dot--no {
-    background: #ef4444;
+  background: #ef4444;
 }
 
 .go-no-go__status {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .go-no-go__details {
-    color: #6b7280;
-    font-size: 13px;
+  color: #6b7280;
+  font-size: 13px;
 }

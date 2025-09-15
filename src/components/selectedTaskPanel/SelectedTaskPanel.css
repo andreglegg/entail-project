@@ -1,26 +1,26 @@
 .selected-task {
-    display: grid;
-    gap: 4px;
+  display: grid;
+  gap: 4px;
 }
 
 .selected-task__title {
-    font-weight: 700;
-    font-size: 16px;
-    color: #111827;
+  font-weight: 700;
+  font-size: 16px;
+  color: #111827;
 }
 
 .selected-task__dates {
-    color: #6b7280;
-    font-size: 13px;
+  color: #6b7280;
+  font-size: 13px;
 }
 
 .selected-task__limits {
-    margin-top: 8px;
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+  margin-top: 8px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .selected-task__limit {
-    font-size: 13px;
+  font-size: 13px;
 }

@@ -4,18 +4,18 @@ import { toIsoDayStart, toIsoDayEnd } from '../lib/date';
 export function normalizeTasks(payload: WeatherForecastPayload): TaskInstance[] {
   const tasks = payload.plannedTasks.projects.flatMap((p) => p.tasks);
   return tasks
-    .map((t) => {
-      const [minTp, maxTp] = t.weatherLimits.Tp;
-      const instanceId = `${t.id}#${t.startDate}`;
+    .map((task) => {
+      const [minTp, maxTp] = task.weatherLimits.Tp;
+      const instanceId = `${task.id}#${task.startDate}`;
       return {
         instanceId,
-        id: t.id,
-        name: t.name,
-        parentId: t.parentId ?? '',
-        level: t.level,
-        startAt: toIsoDayStart(t.startDate),
-        endAt: toIsoDayEnd(t.endDate),
-        maxHs: t.weatherLimits.Hs,
+        id: task.id,
+        name: task.name,
+        parentId: task.parentId ?? '',
+        level: task.level,
+        startAt: toIsoDayStart(task.startDate),
+        endAt: toIsoDayEnd(task.endDate),
+        maxHs: task.weatherLimits.Hs,
         minTp,
         maxTp,
       };
